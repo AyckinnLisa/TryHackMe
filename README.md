@@ -4,4 +4,4 @@ Ce repo se veut être un guide pour vous débloquer dans le cas où vous ne pouv
 
 > [!CAUTION]
 > <b>EN AUCUN CAS</b> je ne vous donnerai les solutions directes aux exercices !
-> <b>Il N'EST PAS QUESTION</b> de saboter le travail des développeurs du site !
+> <br><b>Il N'EST PAS QUESTION</b> de saboter le travail des développeurs du site !
