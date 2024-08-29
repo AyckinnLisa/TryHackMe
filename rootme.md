@@ -12,7 +12,7 @@ First, let's get information about the target.
 ### Question 1
 
 Scan the machine, how many ports are open ?
-<br>Scanner la machine, combien de ports sont ouverts ?
+<br>Scannez la machine, combien de ports sont ouverts ?
 
 > [!TIP]
 > Question Hint
@@ -25,12 +25,12 @@ Scan the machine, how many ports are open ?
 nmap -Pn 10.10.182.207
 ```
 
-<br>
-
 > [!WARNING]
 > Adaptez la commande à l'adresse IP de VOTRE machine virtuelle. Elle change à chaque connexion, il est donc peu probable qu'elle soit identique à la mienne au moment où j'écris ce guide.
 
 Réponse: <b>x</b>
+
+<br>
 
 ### Question 2
 
@@ -41,6 +41,8 @@ What version of Apache is running?
 apache2 -v | grep "version"
 ```
 Réponse: <b>x.x.xx</b>
+
+<br>
 
 ### Question 3
 
