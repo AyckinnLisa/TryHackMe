@@ -9,8 +9,12 @@ Suivez simplement les instructions pour déployer la machine virtuelle.
 First, let's get information about the target.
 <br>Commençons par obtenir des informations sur la cible.
 
-**1. Scan the machine, how many ports are open ?**
-<br>**1. Scanner la machine, combien de ports sont ouverts ?**
+<br>
+
+### Question 1
+
+Scan the machine, how many ports are open ?
+<br>Scanner la machine, combien de ports sont ouverts ?
 
 <br>
 
@@ -31,12 +35,14 @@ nmap -Pn 10.10.182.207
 > [!WARNING]
 > Adaptez la commande à l'adresse IP de VOTRE machine virtuelle. Elle change à chaque connexion, il est donc peu probable qu'elle soit identique à la mienne au moment où j'écris ce guide.
 
-<br>La première réponse apparaît.
+<br>Réponse: <b>x</b>
 
 <br>
 
-**2. What version of Apache is running?**
-<br>**2. Quelle version d'Apache est active?**
+### Question 2
+
+What version of Apache is running?
+<br>Quelle version d'Apache est active?
 
 <br>
 
@@ -44,8 +50,8 @@ nmap -Pn 10.10.182.207
 apache2 -v | grep "version"
 ```
 
-<br>La seconde réponse apparaît.
+<br>Réponse: <b>x.x.xx</b>
 
-
+<br>
 
 ## TACHE 3 - 
