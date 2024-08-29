@@ -48,6 +48,8 @@ nmap -sV IP_VPN
 > [!WARNING]
 > Adaptez la commande à l'adresse IP de VOTRE machine virtuelle. Elle change à chaque connexion, il est donc peu probable qu'elle soit identique à la mienne au moment où j'écris ce guide.
 
+<br>
+
 <pre>
 Starting Nmap 7.60 ( https://nmap.org ) at 2024-08-29 17:40 BST
 Nmap scan report for ip-10-10-201-117.eu-west-1.compute.internal (IP_VPN)
@@ -74,14 +76,14 @@ What is the hidden directory?
 Quel est le repertoire caché?
 </pre>
 
-<br>Pour répondre à cette question, utilisez l'astuce qui ne nécessite pas de réponse:
+Pour répondre à cette question, utilisez l'astuce qui ne nécessite pas de réponse:
 
 <br>
 
 > [!TIP]
 > gobuster dir -u IP_VPN -w WORDLIST_PATH
 
-Remplacez `IP_VPN` par l'IP de votre machine distante et `WORDLIST_PATH` par le chemin de l'un des wordlists, qui, pour Gobuster, se trouvent dans: `/usr/share/wordlists/dirbuster/`:
+<br>Remplacez `IP_VPN` par l'IP de votre machine distante et `WORDLIST_PATH` par le chemin de l'un des wordlists, qui, pour Gobuster, se trouvent dans: `/usr/share/wordlists/dirbuster/`:
 
 ```bash
 gobuster dir -u IP_VPN -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
@@ -316,6 +318,8 @@ find / -type f -name "user.txt" 2>/dev/null
 >
 > <b>IL EST À NOTER</b> que `/dev/null` est un périphérique spécial sous Linux qui supprime toutes les données qui lui sont envoyées, y compris les erreurs d'accès à des dossiers en raisons de l'absence de permissions.
 
+<br>
+
 <pre>
 /var/www/user.txt
 </pre>
@@ -381,15 +385,21 @@ find / -user root -perm /4000 2>/dev/null
 <b>/usr/bin/python</b>
 </pre>
 
+<br>
+
 > [!NOTE]
 > Le fait que `Python` se trouve dans la liste des permissions `sudo` implique qu'il a plus de permissions qu'il ne devrait.
 > <br>En effet, tous les autres binaires ne peuvent être utilisés que par `sudo` alors que `Python` peut être utiliser par les utillisateurs classiques, il n'a pas besoin de ces permissions.
 > <br>C'est donc par lui que nous allons passer élever nos privilèges.
 
+<br>
+
 ### Question 2
 <pre>
 root.txt
 </pre>
+
+<br>
 
 > [!TIP]
 > Search for gtfobins
