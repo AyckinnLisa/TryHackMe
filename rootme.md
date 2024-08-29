@@ -8,17 +8,20 @@ Suivez simplement les instructions pour déployer la machine virtuelle.
 
 ## TACHE 2 - Reconnaissance
 <pre>
-First, let's get information about the target.<br>Commençons par obtenir des informations sur la cible.
+First, let's get information about the target.
+Commençons par obtenir des informations sur la cible.
 </pre>
 
 ### Question 1
 <pre>
-Scan the machine, how many ports are open ?<br>Scannez la machine, combien de ports sont ouverts ?
+Scan the machine, how many ports are open ?
+Scannez la machine, combien de ports sont ouverts ?
 </pre>
 
 ### Question 2
 <pre>
-What version of Apache is running?<br>Quelle version d'Apache est active?
+What version of Apache is running?
+Quelle version d'Apache est active?
 </pre>
 
 ### Question 3
@@ -75,7 +78,7 @@ Trouvez un formulaire pour télécharger et obtenir un shell inversé et trouvez
 
 > [!TIP]
 > Search for "file upload bypass" and "PHP reverse shell".
-> Recherchez « file upload bypass » et « PHP reverse shell ».
+> <br>Recherchez « file upload bypass » et « PHP reverse shell ».
 
 <br>Commencez par ouvrir Firefox sur la machine distante et rentrez son IP:
 
@@ -90,7 +93,7 @@ root@rootme:~#
 Can you root me?
 </pre>
 
-Vous ne pouvez rien faire sur la page d'accueil mais il est toujours bon de regarder ce qui se cache dans le code-source avec `CTRL+U`:
+<br>Vous ne pouvez rien faire sur la page d'accueil mais il est toujours bon de regarder ce qui se cache dans le code-source avec `CTRL+U`:
 
 ```html
 <!DOCTYPE html>
@@ -120,14 +123,15 @@ Vous ne pouvez rien faire sur la page d'accueil mais il est toujours bon de rega
 </html>
 ```
 
-Bon, je n'ai jamais dit que c'était toujours intéressant mais c'est un réflexe à avoir systématiquement. Mais ce code ne nous apporte rien.
-<br>Rendons nous dans le dossier caché que nous avons découvert avec Gobuster toute à l'heure:
+Bon, je n'ai jamais dit que c'était toujours intéressant mais c'est un réflexe à avoir systématiquement. Ce code ne nous apporte rien.
+
+<br>Rendons-nous dans le dossier caché que nous avons découvert avec Gobuster toute à l'heure:
 
 <pre>
 http://MACHINE_IP/dossier
 </pre>
 
-Ah, tiens, un formulaire de téléchargement ! Comme conseillé dans l'astuce:
+<br>Ah, tiens, un formulaire de téléchargement ! Comme conseillé dans l'astuce:
 
 <pre>
 Select a file to upload:
@@ -147,13 +151,13 @@ cd Downloads
 git clone https://github.com/pentestmonkey/php-reverse-shell
 ```
 
-Puis rendez-vous dans le dossier:
+<br>Puis rendez-vous dans le dossier:
 
 ```bash
 cd php-reverse-shell
 ```
 
-Il va falloir modifier l'IP et le port dans le fichier `php-reverse-shell.php`. 
+<br>Il va falloir modifier l'IP et le port dans le fichier `php-reverse-shell.php`. 
 <br>Editez-le avec `nano` et modifiez ces lignes comme suit:
 
 ```php
@@ -173,8 +177,9 @@ $debug = 0;
 [...]
 ```
 
-<br>Nous utilisons le serveur web de la machine distante, qui est sur le port 80.
-<br>Il faut, ensuite, rendre le fichier exécutable:
+Nous utilisons le serveur web de la machine distante, qui est sur le port 80.
+
+Il faut, ensuite, rendre le fichier exécutable:
 
 ```bash
 chmod +x php-reverse-shell.php
