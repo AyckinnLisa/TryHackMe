@@ -4,8 +4,6 @@
 
 Suivez simplement les instructions pour déployer la machine virtuelle.
 
-<br>
-
 ## TACHE 2 - Reconnaissance
 <pre>
 First, let's get information about the target.
