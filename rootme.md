@@ -28,7 +28,9 @@ What service is running on port 22?
 Quel service est exécuté sur le port 22?
 </pre>
 
-J'ai regroupé les trois premières questions car nous pouvons y répondre avec une seule commande:
+J'ai regroupé les trois premières questions car nous pouvons y répondre avec une seule commande.
+
+<br>
 
 > [!TIP]
 > Question Hint
@@ -41,6 +43,7 @@ J'ai regroupé les trois premières questions car nous pouvons y répondre avec 
 ```bash
 nmap -sV IP_VPN
 ```
+<br>
 
 > [!WARNING]
 > Adaptez la commande à l'adresse IP de VOTRE machine virtuelle. Elle change à chaque connexion, il est donc peu probable qu'elle soit identique à la mienne au moment où j'écris ce guide.
@@ -60,7 +63,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 8.87 seconds
 </pre>
 
-<br>Réponse 1: <b>x</b>
+Réponse 1: <b>x</b>
 <br>Réponse 2: <b>x.x.xx</b>
 <br>Réponse: <b>xxx</b>
 
@@ -72,6 +75,8 @@ Quel est le repertoire caché?
 </pre>
 
 <br>Pour répondre à cette question, utilisez l'astuce qui ne nécessite pas de réponse:
+
+<br>
 
 > [!TIP]
 > gobuster dir -u IP_VPN -w WORDLIST_PATH
@@ -106,12 +111,15 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 
 Réponse: <b>/xxxxx/</b>
 
+<br>
 
 ## TACHE 3 - Getting a Shell
 <pre>
 Find a form to upload and get a reverse shell, and find the flag.
 Trouvez un formulaire pour télécharger et obtenir un shell inversé et trouvez le drapeau.
 </pre>
+
+<br>
 
 > [!TIP]
 > Search for "file upload bypass" and "PHP reverse shell".
@@ -212,6 +220,8 @@ $debug = 0;
 [...]
 </pre>
 
+<br>
+
 > [!NOTE]
 > `IP`: Il s'agit de l'IP de l'attaquant, vous, donc soit, celle de l'Attackbox, soit la votre si vous utilisez le VPN
 > <br>`PORT`: Mettez celui que vous vous, tant qu'il n'est pas déjà pris comme le `80` ou le `22`, par exemple.
@@ -294,6 +304,8 @@ bash-4.4$
 find / -type f -name "user.txt" 2>/dev/null
 ```
 
+<br>
+
 > [!NOTE]
 > On lui demande de:
 > - `find`: Trouver
@@ -320,6 +332,8 @@ cat /var/www/user.txt
 <b>THM{xxxxxxxxxxxxxxx}</b>
 </pre>
 
+<br>
+
 ## TACHE 4 - Privilege escalation
 <pre>
 Now that we have a shell, let's escalate our privileges to root.
@@ -331,6 +345,8 @@ Maintenant que nous disposons d'un shell, nous allons escalader nos privilèges 
 Search for files with SUID permission, which file is weird?
 Recherche de fichiers avec l'autorisation SUID, quel est le fichier bizarre ?
 </pre>
+
+<br>
 
 > [!TIP]
 > find / -user root -perm /4000
@@ -377,7 +393,7 @@ root.txt
 
 > [!TIP]
 > Search for gtfobins
-> Recherche de gtfobins
+> <br>Recherche de gtfobins
 
 <br>Pourquoi escalader nos privilèges ? Tout simplement parce qu'en l'état, il ne nous est pas possible d'accéder au dossier `/root`, qui contient, logiquement, le flag `root.txt`
 
@@ -386,7 +402,7 @@ cd root
 bash: cd: root: Permission denied
 </pre>
 
-<br>Pour savoir comment escalader nos privilèges pour accéder à ce dossier, il falloir aller consulter le site `GTFOBins` qui référencie tous les binaires Unix qui peuvent être utilisés pour contourner les restrictions de sécurité locales dans des systèmes mal configurés.
+<br>Pour savoir comment escalader nos privilèges pour accéder à ce dossier, comme précisé dans l'indice,  il falloir aller consulter le site `GTFOBins` qui référencie tous les binaires Unix qui peuvent être utilisés pour contourner les restrictions de sécurité locales dans des systèmes mal configurés.
 
 Dans la barre de recherche, tapez `python` puis, séléctionnez `SUID`, puisque c'est l'autorisation qu'il nous faut (voir l'indice).
 
