@@ -8,20 +8,17 @@ Suivez simplement les instructions pour déployer la machine virtuelle.
 
 ## TACHE 2 - Reconnaissance
 <pre>
-First, let's get information about the target.
-<br>Commençons par obtenir des informations sur la cible.
+First, let's get information about the target.<br>Commençons par obtenir des informations sur la cible.
 </pre>
 
 ### Question 1
 <pre>
-Scan the machine, how many ports are open ?
-<br>Scannez la machine, combien de ports sont ouverts ?
+Scan the machine, how many ports are open ?<br>Scannez la machine, combien de ports sont ouverts ?
 </pre>
 
 ### Question 2
 <pre>
-What version of Apache is running?
-<br>Quelle version d'Apache est active?
+What version of Apache is running?<br>Quelle version d'Apache est active?
 </pre>
 
 ### Question 3
