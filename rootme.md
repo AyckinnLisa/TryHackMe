@@ -24,9 +24,9 @@ First, let's get information about the target.
 > Question Hint
 >
 > Use nmap to do a port scan.
-> Utilisez nmap pour effectuer le scanne de port
+> <br>Utilisez nmap pour effectuer le scanne de port
 
-<br>
+<br>Ce que nous allons faire:
 
 ```bash
 nmap -Pn 10.10.182.207
@@ -55,7 +55,7 @@ Nmap done: 1 IP address (1 host up) scanned in 1.64 seconds
 <br>
 
 <pre>
-+------------------------------------------------------------------------+   +--------------+   +--------------+
-| <b>x</b>                                                                      |   |    SUBMIT    |   |     HINT     |
-+------------------------------------------------------------------------+   +--------------+   +--------------+
++------------------------------------------------------------------------+   +----------------+   +--------------+
+| <b>x</b>                                                                      |   | CORRECT ANSWER |   |     HINT     |
++------------------------------------------------------------------------+   +----------------+   +--------------+
 </pre>
