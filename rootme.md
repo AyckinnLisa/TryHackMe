@@ -65,10 +65,13 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 8.87 seconds
 </pre>
 
-Réponse 1: <b>x</b>
-<br>Réponse 2: <b>x.x.xx</b>
-<br>Réponse: <b>xxx</b>
+<pre>
+Réponse 1: <b>*</b>
+Réponse 2: <b>*.*.**</b>
+Réponse: <b>***</b>
+</pre>
 
+<br>
 
 ### Question 4
 <pre>
@@ -111,9 +114,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 </pre>
 
-Réponse: <b>/xxxxx/</b>
+<pre>
+-----> <b>/*****/</b>
+</pre>
 
-<br>
+<br><br>
 
 ## TACHE 3 - Getting a Shell
 <pre>
@@ -333,7 +338,7 @@ cat /var/www/user.txt
 ```
 
 <pre>
-<b>THM{xxxxxxxxxxxxxxx}</b>
+<b>THM{***************}</b>
 </pre>
 
 <br>
@@ -433,10 +438,10 @@ python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
 cat root/root.txt
 ```
 <pre>
-<b>THM{xxxxxxxxxxxxxxxxxxxx}</b>
+<b>THM{********************}</b>
 </pre>
 
 <br>
 
 > [!IMPORTANT]
-> **FELICITATIONS, VOUS AVEZ RÉUSSI LE DEFI !**
+> **FELICITATIONS, VOUS AVEZ TERMINÉ LA ROOM !**
