@@ -148,5 +148,5 @@ Ici encore, il n'est pas nécessaire d'aller chercher très loin, soyez juste at
 
 <br>
 
-> [!IMPORTANT]
+> [!TIP]
 > **FELICITATIONS, VOUS AVEZ TERMINÉ LA ROOM !**
