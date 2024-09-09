@@ -7,9 +7,8 @@ Tout d'abord, voyons ce qu'est [Eternal Blue](https://fr.wikipedia.org/wiki/Eter
 
 C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a sorti un correctif. Cette faille a été utilisée par l'un des ransomwares les plus prolifiques de l'Histoire : [Wannacry](https://fr.wikipedia.org/wiki/WannaCry)
 
-<pre>
-<b>v***:*****-***</b>
-</pre>
+> [!IMPORTANT]
+> <b>v***:*********</b>
 
 **IL EST A NOTER** que vous ne pourrez pas tester cette recherche directement dans `Shodan` car elle est restreinte, uniquement, aux professionnels et aux académies afin d'éviter aux utilisateurs malveillants de faire n'importe quoi !
 
@@ -28,9 +27,8 @@ Quel est le système d'exploitation le plus utilisé pour les serveurs MYSQL dan
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-<pre>
-<b>5.6.40-84.0-log</b>
-</pre>
+> [!IMPORTANT]
+> <b>5.6.40-84.0-log</b>
 
 <br>
 
@@ -46,9 +44,8 @@ Quel est le deuxième pays le plus populaire pour les serveurs MYSQL dans l'ASN 
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-<pre>
-<b>Netherlands</b>
-</pre>
+> [!IMPORTANT]
+> <b>Netherlands</b>
 
 <br>
 
@@ -65,9 +62,8 @@ ou Hypertext Transfer Protocol avec SSL ?
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-<pre>
-<b>Hypertext Transfer Protocol</b>
-</pre>
+> [!IMPORTANT]
+> <b>Hypertext Transfer Protocol</b>
 
 <br>
 
@@ -83,9 +79,8 @@ Selon l'ASN de Google, quelle est la ville la plus populaire ?
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-<pre>
-<b>Kansas City</b>
-</pre>
+> [!IMPORTANT]
+> <b>Kansas City</b>
 
 <br>
 
@@ -101,9 +96,8 @@ Dans l'ASN de Google à Los Angeles, quel est le meilleur système d'exploitatio
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-<pre>
-<b>Debian</b>
-</pre>
+> [!IMPORTANT]
+> <b>Debian</b>
 
 <br>
 
@@ -118,9 +112,8 @@ En utilisant la recherche de webcam en haut de la page d'exploration, est-ce que
 
 <br>Bon ben là, on ne peut pas faire plus clair comme indice, je crois..
 
-<pre>
-<b>Nay</b>
-</pre>
+> [!IMPORTANT]
+> <b>Nay</b>
 
 <br>
 
@@ -137,9 +130,8 @@ Quelle URL vous conduit au Moniteur Shodan ?
 
 Pour suivre cette tâche, il semble qu'il faut être abonné à `Shodan`, cependant, il n'est pas nécessaire de l'être pour répondre à la question puisque la réponse est dans l'exercice.
 
-<pre>
-<b>*****://*******.******.**/*********</b>
-</pre>
+> [!IMPORTANT]
+> <b>*****://*******.******.**/*********</b>
 
 <br><br>
 
@@ -151,9 +143,9 @@ Quel "dork" nous permet de trouver des PC infectés par des ransomwares ?
 
 Ici encore, il n'est pas nécessaire d'aller chercher très loin, soyez juste attentif à l'exercice, faites les tests proposés, vous finirez par répondre naturellement à cette question
 
-<pre>
-<b>**************:**** ********* *********</b>
-</pre>
+> [!IMPORTANT]
+> <b>**************:**** ********* *********</b>
+
 
 <br>
 
