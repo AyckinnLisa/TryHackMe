@@ -4,13 +4,14 @@
 
 Tout d'abord, voyons ce qu'est [Eternal Blue](https://fr.wikipedia.org/wiki/EternalBlue).
 <br>L'article est court mais il contient tout ce dont nous avons besoin.
-<br>C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a sorti un correctif. Cette faille a été utilisée par l'un des ransomwares les plus prolifiques : [Wannacry](https://fr.wikipedia.org/wiki/WannaCry)
+
+C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a sorti un correctif. Cette faille a été utilisée par l'un des ransomwares les plus prolifiques de l'Histoire : [Wannacry](https://fr.wikipedia.org/wiki/WannaCry)
 
 <pre>
 -----> <b>v***:*****-***</b>
 </pre>
 
-**IL EST A NOTER** que vous ne pourrez pas tester cette recherche directement dans `Shodan`, car elle est restreinte, uniquement, aux professionnels ou aux académies afin d'éviter aux utilisateurs malveillants de faire n'importe quoi !
+**IL EST A NOTER** que vous ne pourrez pas tester cette recherche directement dans `Shodan` car elle est restreinte, uniquement, aux professionnels et aux académies afin d'éviter aux utilisateurs malveillants de faire n'importe quoi !
 
 <br>
 
@@ -116,7 +117,7 @@ Using the top Webcam search from the explore page, does Google's ASN have any we
 What URL takes you to Shodan Monitor?
 <br>Quelle URL vous conduit au Moniteur Shodan ?
 
-Pour suivre cette tâche, il semble qu'il faut être abonnéà `Shodan`, cependant, il n'est pas nécessaire de l'être pour répondre à la question puisque la réponse est dans l'exercice.
+Pour suivre cette tâche, il semble qu'il faut être abonné à `Shodan`, cependant, il n'est pas nécessaire de l'être pour répondre à la question puisque la réponse est dans l'exercice.
 
 <pre>
 -----> <b>*****://*******.******.**/*********</b>
