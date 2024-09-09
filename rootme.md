@@ -65,11 +65,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 8.87 seconds
 </pre>
 
-<pre>
-Réponse 1: <b>*</b>
-Réponse 2: <b>*.*.**</b>
-Réponse 3: <b>***</b>
-</pre>
+> [!IMPORTANT]
+> Réponse 1: <b>°</b>
+> <br>Réponse 2: <b>°.°.°°</b>
+> <br>Réponse 3: <b>°°°</b>
 
 <br>
 
@@ -114,9 +113,8 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 </pre>
 
-<pre>
-<b>/*****/</b>
-</pre>
+> [!IMPORTANT]
+> <b>/°°°°°/</b>
 
 <br><br>
 
@@ -337,9 +335,8 @@ Lisez le fichier avec `cat` par exemple:
 cat /var/www/user.txt
 ```
 
-<pre>
-<b>THM{***************}</b>
-</pre>
+> [!IMPORTANT]
+> <b>THM{°°°°°°°°°°°°°°°}</b>
 
 <br>
 
@@ -437,11 +434,11 @@ python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
 ```bash
 cat root/root.txt
 ```
-<pre>
-<b>THM{********************}</b>
-</pre>
+
+> [!IMPORTANT]
+> <b>THM{°°°°°°°°°°°°°°°°°°°°}</b>
 
 <br>
 
-> [!IMPORTANT]
+> [!TIP]
 > **FELICITATIONS, VOUS AVEZ TERMINÉ LA ROOM !**
