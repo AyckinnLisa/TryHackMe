@@ -6,9 +6,9 @@ Tout d'abord, voyons ce qu'est [Eternal Blue](https://fr.wikipedia.org/wiki/Eter
 <br>L'article est court mais il contient tout ce dont nous avons besoin.
 <br>C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a sorti un correctif. Cette faille a été utilisée par l'un des ransomwares les plus prolifiques : [Wannacry](https://fr.wikipedia.org/wiki/WannaCry)
 
-```
------> vxxx:xxxxx-xxx
-```
+<pre>
+-----> <b>v***:*****-***</b>
+</pre>
 
 **IL EST A NOTER** que vous ne pourrez pas tester cette recherche directement dans `Shodan`, car elle est restreinte, uniquement, aux professionnels ou aux académies afin d'éviter aux utilisateurs malveillants de faire n'importe quoi !
 
@@ -26,11 +26,9 @@ What is the top operating system for MYSQL servers in Google's ASN?
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-```
------> 5.6.40-84.0-log
-```
-
-<br>
+<pre>
+-----> <b>5.6.40-84.0-log</b>
+</pre>
 
 #### QUESTION 2
 
@@ -43,9 +41,68 @@ What is the 2nd most popular country for MYSQL servers in Google's ASN?
 
 <br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
 
-```
------> Netherlands
-```
+<pre>
+-----> <b>Netherlands</b>
+</pre>
+
+#### QUESTION 3
+
+Under Google's ASN, which is more popular for nginx, Hypertext Transfer Protocol or Hypertext Transfer Protocol with SSL?
+<br>Dans le cadre de l'ASN de Google, quel est le protocole le plus populaire pour nginx, Hypertext Transfer Protocol ou Hypertext Transfer Protocol avec SSL ?
+
+> [!TIP]
+> Search " asn:AS15169 product:"nginx" " to get Hypertext Transfer Protocol
+> <br>Recherchez " asn:AS15169 product:"nginx" " pour obtenir le protocole de transfert hypertexte.
+
+<br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
+
+<pre>
+-----> <b>Hypertext Transfer Protocol</b>
+</pre>
+
+#### QUESTION 4
+
+Under Google's ASN, what is the most popular city?
+<br>Selon l'ASN de Google, quelle est la ville la plus populaire ?
+
+> [!TIP]
+> Search " asn:AS15169 country:"US" " to get Kansas City
+> <br>Recherchez " asn:AS15169 country:"US" " pour obtenir Kansas City
+
+<br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
+
+<pre>
+-----> <b>Kansas City</b>
+</pre>
+
+#### QUESTION 5
+
+Under Google's ASN in Los Angeles, what is the top operating system according to Shodan?
+<br>Dans l'ASN de Google à Los Angeles, quel est le meilleur système d'exploitation selon Shodan ?
+
+> [!TIP]
+> Search " asn:AS15169 country:"US" city:"Los Angeles" " to get Debian
+> <br>Recherchez " asn:AS15169 country:"US" city:"Los Angeles" " pour obtenir Debian
+
+<br>La réponse étant donnée par `TryHackMe` eux-même dans l'indice, je la mets en clair:
+
+<pre>
+-----> <b>Debian</b>
+</pre>
+
+#### QUESTION 6
+
+Using the top Webcam search from the explore page, does Google's ASN have any webcams? Yay/nay.
+<br>En utilisant la recherche de webcam en haut de la page d'exploration, est-ce que l'ASN de Google a des webcams ? Oui/non.
+
+> [!TIP]
+> Nay
+
+<br>Bon ben là, on ne peut pas faire plus clair comme indice, je crois..
+
+<pre>
+-----> <b>Nay</b>
+</pre>
 
 <br>
 
@@ -54,14 +111,29 @@ What is the 2nd most popular country for MYSQL servers in Google's ASN?
 
 <br>
 
+### TÂCHE 4 - MONITEUR SHODAN
 
+What URL takes you to Shodan Monitor?
+<br>Quelle URL vous conduit au Moniteur Shodan ?
 
+Pour suivre cette tâche, il semble qu'il faut être abonnéà `Shodan`, cependant, il n'est pas nécessaire de l'être pour répondre à la question puisque la réponse est dans l'exercice.
 
+<pre>
+-----> <b>*****://*******.******.**/*********</b>
+</pre>
 
+<br>
 
+### TÂCHE 5 - SHODAN DORKING
 
+What dork lets us find PCs infected by Ransomware?
+<br>Quel "dork" nous permet de trouver des PC infectés par des ransomwares ?
 
+Ici encore, il n'est pas nécessaire d'aller chercher très loin, soyez juste attentif à l'exercice, faites les tests proposés, vous finirez par répondre naturellement à cette question
 
+<pre>
+-----> <b>**************:**** ********* *********</b>
+</pre>
 
 <br>
 
