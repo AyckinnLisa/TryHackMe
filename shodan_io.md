@@ -8,7 +8,7 @@ Tout d'abord, voyons ce qu'est [Eternal Blue](https://fr.wikipedia.org/wiki/Eter
 C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a sorti un correctif. Cette faille a été utilisée par l'un des ransomwares les plus prolifiques de l'Histoire : [Wannacry](https://fr.wikipedia.org/wiki/WannaCry)
 
 > [!IMPORTANT]
-> <b>v***:*********</b>
+> <b>v°°°:°°°°°°°°°</b>
 
 **IL EST A NOTER** que vous ne pourrez pas tester cette recherche directement dans `Shodan` car elle est restreinte, uniquement, aux professionnels et aux académies afin d'éviter aux utilisateurs malveillants de faire n'importe quoi !
 
@@ -131,7 +131,7 @@ Quelle URL vous conduit au Moniteur Shodan ?
 Pour suivre cette tâche, il semble qu'il faut être abonné à `Shodan`, cependant, il n'est pas nécessaire de l'être pour répondre à la question puisque la réponse est dans l'exercice.
 
 > [!IMPORTANT]
-> <b>*****://*******.******.**/*********</b>
+> <b>°°°°°://°°°°°°°.°°°°°°.°°/°°°°°°°°°</b>
 
 <br><br>
 
@@ -144,8 +144,7 @@ Quel "dork" nous permet de trouver des PC infectés par des ransomwares ?
 Ici encore, il n'est pas nécessaire d'aller chercher très loin, soyez juste attentif à l'exercice, faites les tests proposés, vous finirez par répondre naturellement à cette question
 
 > [!IMPORTANT]
-> <b>**************:**** ********* *********</b>
-
+> <b>°°°°°°°°°°°°°°:°°°° °°°°°°°°° °°°°°°°°°</b>
 
 <br>
 
