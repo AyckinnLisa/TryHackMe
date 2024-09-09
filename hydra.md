@@ -22,7 +22,7 @@ Nous utiliserons donc `Hydra` mais aussi `Burp`et son navigateur intégré.
 Rendez-vous dans l’onglet `Proxy`, puis cliquez sur `Open browser`. Il se peut que vous ayez un message d’erreur, suivez simplement l’instruction pour débloquer le navigateur.
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q1_burp_proxy.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q1_burp_proxy.png"
         style="width:100%">
 </div>
 
@@ -30,7 +30,7 @@ Rendez-vous dans l’onglet `Proxy`, puis cliquez sur `Open browser`. Il se peut
 <br>Nous pouvons voir un formulaire de connexion.
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q1_login.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q1_login.png"
         style="width:50%">
 </div>
 
@@ -39,7 +39,7 @@ Considérons que nous avons déjà le nom de l’utilisateur `Molly`, il s'agit 
 Pour ce faire, nous allons activer le mode interception en cliquant sur le bouton `Intercept is off` pour le passer sur `on`
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q1_intercept.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q1_intercept.png"
         style="width:100%">
 </div>
 
@@ -61,7 +61,7 @@ hydra -I IP_CIBLE -l molly -P /usr/share/wordlists/rockyou.txt httpp-post-form "
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q1_demo.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q1_demo.png"
         style="width:100%">
 </div>
 
@@ -79,7 +79,7 @@ Il est temps de récupérer le flag. Maintenant que nous avons les logs de Molly
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q1_flag.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q1_flag.png"
         style="width:100%">
 </div>
  
@@ -113,14 +113,14 @@ Là encore, après quelques secondes, vous devriez voir le mot de passe de Molly
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q2_attack_ssh.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q2_attack_ssh.png"
         style="width:100%">
 </div>
 
 Vous pouvez maintenant se connecter en SSH avec ses identificants
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q2_ssh_access.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q2_ssh_access.png"
         style="width:100%">
 </div>
 
@@ -131,7 +131,7 @@ Un `LS` puis un `CAT` sur le fichier `flag2.txt` et le drapeau est dévoilé
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/TryHackMe/blob/main/Hydra/img/q2_flag.png"
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/q2_flag.png"
         style="width:100%">
 </div>
 
