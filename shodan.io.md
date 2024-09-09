@@ -18,8 +18,10 @@ C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a so
 ### TÂCHE 3 - GOOGLE ET FILTRAGE
 #### QUESTION 1
 
+<pre>
 What is the top operating system for MYSQL servers in Google's ASN?
 <br>Quel est le système d'exploitation le plus utilisé pour les serveurs MYSQL dans l'ASN de Google ? 
+</pre>
 
 > [!TIP]
 > Search " asn:AS15169 product:"MySQL" " to get 5.6.40-84.0-log.
@@ -33,8 +35,10 @@ What is the top operating system for MYSQL servers in Google's ASN?
 
 #### QUESTION 2
 
+<pre>
 What is the 2nd most popular country for MYSQL servers in Google's ASN?
 <br>Quel est le deuxième pays le plus populaire pour les serveurs MYSQL dans l'ASN de Google ?
+</pre>
 
 > [!TIP]
 > Search " asn:AS15169 product:"MySQL" " to get Netherlands
@@ -48,8 +52,10 @@ What is the 2nd most popular country for MYSQL servers in Google's ASN?
 
 #### QUESTION 3
 
+<pre>
 Under Google's ASN, which is more popular for nginx, Hypertext Transfer Protocol or Hypertext Transfer Protocol with SSL?
 <br>Dans le cadre de l'ASN de Google, quel est le protocole le plus populaire pour nginx, Hypertext Transfer Protocol ou Hypertext Transfer Protocol avec SSL ?
+</pre>
 
 > [!TIP]
 > Search " asn:AS15169 product:"nginx" " to get Hypertext Transfer Protocol
@@ -63,8 +69,10 @@ Under Google's ASN, which is more popular for nginx, Hypertext Transfer Protocol
 
 #### QUESTION 4
 
+<pre>
 Under Google's ASN, what is the most popular city?
 <br>Selon l'ASN de Google, quelle est la ville la plus populaire ?
+</pre>
 
 > [!TIP]
 > Search " asn:AS15169 country:"US" " to get Kansas City
@@ -78,8 +86,10 @@ Under Google's ASN, what is the most popular city?
 
 #### QUESTION 5
 
+<pre>
 Under Google's ASN in Los Angeles, what is the top operating system according to Shodan?
 <br>Dans l'ASN de Google à Los Angeles, quel est le meilleur système d'exploitation selon Shodan ?
+</pre>
 
 > [!TIP]
 > Search " asn:AS15169 country:"US" city:"Los Angeles" " to get Debian
@@ -93,8 +103,10 @@ Under Google's ASN in Los Angeles, what is the top operating system according to
 
 #### QUESTION 6
 
+<pre>
 Using the top Webcam search from the explore page, does Google's ASN have any webcams? Yay/nay.
 <br>En utilisant la recherche de webcam en haut de la page d'exploration, est-ce que l'ASN de Google a des webcams ? Oui/non.
+</pre>
 
 > [!TIP]
 > Nay
@@ -114,8 +126,10 @@ Using the top Webcam search from the explore page, does Google's ASN have any we
 
 ### TÂCHE 4 - MONITEUR SHODAN
 
+<pre>
 What URL takes you to Shodan Monitor?
 <br>Quelle URL vous conduit au Moniteur Shodan ?
+</pre>
 
 Pour suivre cette tâche, il semble qu'il faut être abonné à `Shodan`, cependant, il n'est pas nécessaire de l'être pour répondre à la question puisque la réponse est dans l'exercice.
 
@@ -127,8 +141,10 @@ Pour suivre cette tâche, il semble qu'il faut être abonné à `Shodan`, cepend
 
 ### TÂCHE 5 - SHODAN DORKING
 
+<pre>
 What dork lets us find PCs infected by Ransomware?
 <br>Quel "dork" nous permet de trouver des PC infectés par des ransomwares ?
+</pre>
 
 Ici encore, il n'est pas nécessaire d'aller chercher très loin, soyez juste attentif à l'exercice, faites les tests proposés, vous finirez par répondre naturellement à cette question
 
