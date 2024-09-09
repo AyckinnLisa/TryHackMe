@@ -8,7 +8,7 @@ Tout d'abord, voyons ce qu'est [Eternal Blue](https://fr.wikipedia.org/wiki/Eter
 C'est une vulnérabilité qui exploite une faille `SMBv1` et dont Microsoft a sorti un correctif. Cette faille a été utilisée par l'un des ransomwares les plus prolifiques de l'Histoire : [Wannacry](https://fr.wikipedia.org/wiki/WannaCry)
 
 <pre>
------> <b>v***:*****-***</b>
+<b>v***:*****-***</b>
 </pre>
 
 **IL EST A NOTER** que vous ne pourrez pas tester cette recherche directement dans `Shodan` car elle est restreinte, uniquement, aux professionnels et aux académies afin d'éviter aux utilisateurs malveillants de faire n'importe quoi !
