@@ -32,6 +32,8 @@ Quel est le système d'exploitation le plus utilisé pour les serveurs MYSQL dan
 -----> <b>5.6.40-84.0-log</b>
 </pre>
 
+<br>
+
 #### QUESTION 2
 <pre>
 What is the 2nd most popular country for MYSQL servers in Google's ASN?
@@ -48,10 +50,13 @@ Quel est le deuxième pays le plus populaire pour les serveurs MYSQL dans l'ASN 
 -----> <b>Netherlands</b>
 </pre>
 
+<br>
+
 #### QUESTION 3
 <pre>
 Under Google's ASN, which is more popular for nginx, Hypertext Transfer Protocol or Hypertext Transfer Protocol with SSL?
-Dans le cadre de l'ASN de Google, quel est le protocole le plus populaire pour nginx, Hypertext Transfer Protocol ou Hypertext Transfer Protocol avec SSL ?
+Dans le cadre de l'ASN de Google, quel est le protocole le plus populaire pour nginx, Hypertext Transfer Protocol
+ou Hypertext Transfer Protocol avec SSL ?
 </pre>
 
 > [!TIP]
@@ -63,6 +68,8 @@ Dans le cadre de l'ASN de Google, quel est le protocole le plus populaire pour n
 <pre>
 -----> <b>Hypertext Transfer Protocol</b>
 </pre>
+
+<br>
 
 #### QUESTION 4
 <pre>
@@ -80,6 +87,8 @@ Selon l'ASN de Google, quelle est la ville la plus populaire ?
 -----> <b>Kansas City</b>
 </pre>
 
+<br>
+
 #### QUESTION 5
 <pre>
 Under Google's ASN in Los Angeles, what is the top operating system according to Shodan?
@@ -95,6 +104,8 @@ Dans l'ASN de Google à Los Angeles, quel est le meilleur système d'exploitatio
 <pre>
 -----> <b>Debian</b>
 </pre>
+
+<br>
 
 #### QUESTION 6
 <pre>
@@ -116,7 +127,7 @@ En utilisant la recherche de webcam en haut de la page d'exploration, est-ce que
 > [!NOTE]
 >Les données ayant évoluées depuis la création de la room, je suppose que `TryHackMe` nous donne les réponses car il nous serait impossible d'avancer.
 
-<br>
+<br><br>
 
 ### TÂCHE 4 - MONITEUR SHODAN
 <pre>
@@ -130,7 +141,7 @@ Pour suivre cette tâche, il semble qu'il faut être abonné à `Shodan`, cepend
 -----> <b>*****://*******.******.**/*********</b>
 </pre>
 
-<br>
+<br><br>
 
 ### TÂCHE 5 - SHODAN DORKING
 <pre>
