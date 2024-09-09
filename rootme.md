@@ -68,7 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 8.87 seconds
 <pre>
 Réponse 1: <b>*</b>
 Réponse 2: <b>*.*.**</b>
-Réponse: <b>***</b>
+Réponse 3: <b>***</b>
 </pre>
 
 <br>
@@ -115,7 +115,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 </pre>
 
 <pre>
------> <b>/*****/</b>
+<b>/*****/</b>
 </pre>
 
 <br><br>
