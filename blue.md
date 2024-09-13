@@ -131,6 +131,8 @@ Nmap done: 1 IP address (1 host up) scanned in 97.52 seconds
 > [!IMPORTANT]
 > <b>ms17-010</b>
 
+<br>
+
 ---
 
 ## TACHE 2 - GAIN ACCESS
@@ -154,7 +156,8 @@ msfconsole
 <pre>
 Find the exploitation code we will run against the machine. What is the full path of the code? (Ex: exploit/........)
 
-Trouvez le code d'exploitation que nous allons exécuter sur la machine. Quel est le chemin complet du code ? (Ex : exploit/........)
+Trouvez le code d'exploitation que nous allons exécuter sur la machine. Quel est le chemin complet du code ?
+(Ex : exploit/........)
 </pre>
 
 <br>
@@ -206,7 +209,8 @@ Interact with a module by name or index. For example info 4, use 4 or use exploi
 <pre>
 Show options and set the one required value. What is the name of this value? (All caps for submission)
 
-Afficher les options et définir la seule valeur requise. Quel est le nom de cette valeur ? (Tout en majuscules pour la soumission)
+Afficher les options et définir la seule valeur requise. Quel est le nom de cette valeur ?
+(Tout en majuscules pour la soumission)
 </pre>
 
 <br>
@@ -288,8 +292,8 @@ Remplacez `°°°` par la réponse précédente.
 <br>
 
 <pre>
-Normalement, il est possible d'exécuter cet exploit tel quel, cependant, pour le bien de l'apprentissage, vous devriez faire une chose de plus
-avant d'exploiter la cible. 
+Normalement, il est possible d'exécuter cet exploit tel quel, cependant, pour le bien de l'apprentissage, vous devriez
+faire une chose de plus avant d'exploiter la cible. 
 Entrez la commande suivante et appuyez sur Entrée.
 
 <b>NOTE</b>: Toujours sous "Metasploit".
@@ -358,6 +362,8 @@ C:\Windows\system32>
 Nous voyons que l'exploit a fonctionné et que nous avons accès à `DOS` de `Windows 7 Pro SP1`.
 <br>Gardez-le dans un coin, nous en aurons besoin plus tard.
 
+<br>
+
 ---
 
 ## TACHE 3 - ESCALATE
@@ -367,12 +373,14 @@ Dans cet exercice, nous allons utiliser l'escalade de privilèges.
 ### Question 1
 
 <pre>
-If you haven't already, background the previously gained shell (CTRL + Z). Research online how to convert a shell to meterpreter
-shell in metasploit. What is the name of the post module we will use? (Exact path, similar to the exploit we previously selected)
+If you haven't already, background the previously gained shell (CTRL + Z). Research online how to convert a shell to
+meterpreter
+shell in metasploit. What is the name of the post module we will use? (Exact path, similar to the exploit we previously
+selected)
 
-Si vous ne l'avez pas encore fait, mettez en arrière-plan le shell précédemment acquis (CTRL + Z). Recherchez en ligne comment
-convertir un shell en shell meterpreter dans metasploit. Quel est le nom du module post que nous allons utiliser ? (Chemin
-exact, similaire à l'exploit que nous avons sélectionné précédemment) 
+Si vous ne l'avez pas encore fait, mettez en arrière-plan le shell précédemment acquis (CTRL + Z). Recherchez en ligne
+comment convertir un shell en shell meterpreter dans metasploit. Quel est le nom du module post que nous allons utiliser ?
+(Chemin exact, similaire à l'exploit que nous avons sélectionné précédemment) 
 </pre>
 
 <br>
@@ -502,8 +510,8 @@ meterpreter >
 
 <pre>
 Nous avons maintenant une session <b>meterpreter</b>.
-Nous fonctionnons en tant que système, mais cela n'indique pas que notre processus le soit. Nous devons migrer vers un autre
-processus. En général, nous utilisons services.exe.
+Nous fonctionnons en tant que système, mais cela n'indique pas que notre processus le soit.
+Nous devons migrer vers un autreprocessus. En général, nous utilisons services.exe.
 </pre>
 
 <br>Tapez:
@@ -565,6 +573,8 @@ migrate 668
 [*] Migrating from 1300 to 668...
 [*] Migration completed successfully.
 </pre>
+
+<br>
 
 ---
 
@@ -657,16 +667,19 @@ Session completed.
 > [!IMPORTANT]
 > <b>°°°°°°°°</b>
 
+<br>
+
 ---
 
 ## TACHE 5 - FIND FLAGS
 
 <pre>
-Find the three flags planted on this machine. These are not traditional flags, rather, they're meant to represent key locations
-within the Windows system. Use the hints provided below to complete this room!
+Find the three flags planted on this machine. These are not traditional flags, rather, they're meant to represent
+key locations within the Windows system. Use the hints provided below to complete this room!
 
-Trouvez les trois drapeaux plantés sur cette machine. Il ne s'agit pas de drapeaux traditionnels, mais de drapeaux représentant
-des emplacements clés du système Windows. Utilisez les indices fournis ci-dessous pour terminer cette salle !
+Trouvez les trois drapeaux plantés sur cette machine. Il ne s'agit pas de drapeaux traditionnels, mais de drapeaux
+représentant des emplacements clés du système Windows. Utilisez les indices fournis ci-dessous pour terminer
+cette salle !
 </pre>
 
 <br>
@@ -781,9 +794,11 @@ cat Windows\\System32\\config\\flag2.txt
 ### Question 3
 
 <pre>
-flag3? This flag can be found in an excellent location to loot. After all, Administrators usually have pretty interesting things saved. 
+flag3? This flag can be found in an excellent location to loot. After all, Administrators usually have pretty interesting
+things saved. 
 
-flag3 ? Ce drapeau se trouve à un endroit idéal pour le piller. Après tout, les administrateurs ont généralement des choses intéressantes à sauvegarder. 
+flag3 ? Ce drapeau se trouve à un endroit idéal pour le piller. Après tout, les administrateurs ont généralement
+des choses intéressantes à sauvegarder. 
 </pre>
 
 <br>
