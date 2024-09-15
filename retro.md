@@ -2,7 +2,6 @@
 
 Outils utilisés: [NMAP](https://nmap.org/) - [GOBUSTER](https://github.com/OJ/gobuster) - [XFREERDP](https://www.freerdp.com/)
 
-<br>
 
 ### Question 1
 <pre>
@@ -55,9 +54,7 @@ Facultatif: Pour éviter d’avoir à retenir l’adresse IP de la machine cible
 echo "<IP_CIBLE> retroweb | sudo tee -a /etc/hosts"
 ```
 
-Maintenant que c’est fait, quand nous tapons `http://retroweb` dans la barre d’adresse de firefox, nous avons bien accès à la page du serveur web de la cible, qui, pour rappel, est sous Windows Server:
-
-<br>
+<br>Maintenant que c’est fait, quand nous tapons `http://retroweb` dans la barre d’adresse de firefox, nous avons bien accès à la page du serveur web de la cible, qui, pour rappel, est sous Windows Server:
 
 <div align="center">
     <img
@@ -67,7 +64,7 @@ Maintenant que c’est fait, quand nous tapons `http://retroweb` dans la barre d
 
 <br>
 
-L'indice nous conseille d’utiliser la wordlist `dirbuster 2.3 medium`:
+L'indice nous conseille d’utiliser la wordlist `dirbuster 2.3 medium`.
 <br>Pour utiliser `Dirbuster`, nous allons avoir besoin de l’outils `Gobuster`:
 
 ```bash
@@ -95,6 +92,8 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 </pre>
 
+<br>
+
 > [!NOTE]
 > - `dir` - Indique que nous allons utiliser un répertoire ou un fichier pour le brute-force
 > - `-u` (url) – Indique l’url de l’attaque.
@@ -114,8 +113,6 @@ Une fois le scanne terminé, le dossier caché nous est dévoilé:
 ### Question 2
 
 Dans ce deuxième exercice, il nous est demandé de trouver le fichier `user.txt`:
-
-<br>
 
 <pre>
 [+ 50] - user.txt
@@ -142,11 +139,11 @@ En allant sur son post `Ready Player One` et en analysant le commentaire, nous p
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_pass.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_pass.png"
         style="width:100%">
 </div>
 
-Nous pouvons légitimement penser qu’il s’agit de son mot de passe, ce qui n’est pas super malin.
+<br>Nous pouvons légitimement penser qu’il s’agit de son mot de passe, ce qui n’est pas super malin.
 
 Nous allons maintenant exploiter cette information sur le port 3389, l’un des deux ports ouverts que nous avons vus précédemment.
 Pour ce faire, nous allons utiliser un programme de prise en main à distance (Remote Desktop Protocol), `xfreerdp`.
@@ -155,25 +152,25 @@ Pourquoi ? Parce que le port **3389** EST le port utilisé pour le protocole **R
 
 Nous savons que Wade semble être le seul utilisateur du site puisqu’il n’y a que lui qui poste des articles, et que son mot de passe est, vraisemblablement: `parzival`.
 
-Nous allons donc nous connecter à la machine à distance avec `xfreerdp`:
+<br>Nous allons donc nous connecter à la machine à distance avec `xfreerdp`:
 
 ```bash
 xfreerdp /v:retroweb /u:wade /p:parzival
 ```
 
-Ce qui aura pour effet d'ouvrir une fenêtre avec la prise en main de la machine distante:
+<br>Ce qui aura pour effet d'ouvrir une fenêtre avec la prise en main de la machine distante:
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_rdp_win.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_rdp_win.png"
         style="width:100%">
 </div>
 
-Il nous est maintenant possible d'ouvrir le fichier `user.txt` pour récupérer le flag:
+<br>Il nous est maintenant possible d'ouvrir le fichier `user.txt` pour récupérer le flag:
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_user_flag.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_user_flag.png"
         style="width:100%">
 </div>
 
@@ -205,34 +202,34 @@ Pour ce troisième exercice, il nous est demandé de trouver un autre fichier te
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_hhupd.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_hhupd.png"
         style="width:100%">
 </div>
 
-Ouvrez le fichier, cette fenêtre apparaît:
+<br>Ouvrez le fichier, cette fenêtre apparaît:
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_uac.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_uac.png"
         style="width:100%">
 </div>
 
- L’idée est de récupérer les informations du certificat.
+ <br>L’idée est de récupérer les informations du certificat.
  <br>Pour ce faire, cliquez sur le lien `Show more details`, puis, sur `Show information about the publisher’s certificate`:
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_certif.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_certif.png"
         style="width:100%">
 </div>
 
-Cliquez sur le lien de `Issued by`, le seul lien disponible sur cette page, puis sélectionnez Internet Explorer. Vous pourriez utiliser Chrome mais vous n’obtiendriez pas de session élevée. Il n’est donc pas conseillé d’utiliser Chrome, c’est pourquoi nous choisissons Internet Explorer.
+<br>Cliquez sur le lien de `Issued by`, le seul lien disponible sur cette page, puis sélectionnez Internet Explorer. Vous pourriez utiliser Chrome mais vous n’obtiendriez pas de session élevée. Il n’est donc pas conseillé d’utiliser Chrome, c’est pourquoi nous choisissons Internet Explorer.
 
 Ce qui va nous ouvrir une page d’erreur puisque nous n’avons pas de connection internet sur cette machine, ne vous inquiétez pas, cela n’a aucune importance :
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_ie_error.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_ie_error.png"
         style="width:100%">
 </div>
 
@@ -242,20 +239,21 @@ Faites un `CTRL+S` pour ouvrir la page de sauvegarde puis, rendez-vous dans `C:\
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_sys32.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_sys32.png"
         style="width:100%">
 </div>
 
-Cherchez `cmd`, faites un clic droit et ouvrez-le en tant qu’administrateur:
+<br>Cherchez `cmd`, faites un clic droit et ouvrez-le en tant qu’administrateur:
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_cmd_admin.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_cmd_admin.png"
         style="width:100%">
 </div>
 
-Maintenant, nous pouvons aller chercher le fichier `root.txt` qui contient le flag.
-<br>Tapez la commande suivante pour lire le fichier:
+<br>Maintenant, nous pouvons aller chercher le fichier `root.txt` qui contient le flag.
+
+Tapez la commande suivante pour lire le fichier:
 
 ```bash
 type ..\..\Users\Administrator\Desktop\root.txt.txt
@@ -263,7 +261,7 @@ type ..\..\Users\Administrator\Desktop\root.txt.txt
 
 <div align="center">
     <img
-        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_root_flag.png</div>
+        src="https://github.com/AyckinnLisa/tryhackme/blob/main/img/retro_root_flag.png"
         style="width:100%">
 </div>
 
